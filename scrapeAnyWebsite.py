@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 import os
 import time
-
+from SimulateScrolling import download_images_with_scroll
 def is_valid_url(url):
     """Validate if the provided URL is well-formed."""
     try:
@@ -88,4 +88,5 @@ if __name__ == "__main__":
     
     folder = input("Enter folder name for images (default 'downloaded_images'): ").strip() or "downloaded_images"
     
-    download_images(url, folder, max_count)
+    #download_images(url, folder, max_count) # standard version
+    download_images_with_scroll(url, folder, max_count) #with scrolling
